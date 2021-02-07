@@ -34,7 +34,7 @@ public class Client implements Serializable {
 	@Column(name = "BIRTH_DATE", columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant birthDate;
 
-	@Column(name = "CHILDREN", precision = 2)
+	@Column(name = "CHILDREN", precision = 2, nullable = false)
 	private Integer children;
 	
 	@Column(name = "CREATED_AT", columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
