@@ -3,6 +3,9 @@ package com.devsuperior.dsclient.dto;
 import java.io.Serializable;
 import java.time.Instant;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.devsuperior.dsclient.entities.Client;
 
 public class ClientDTO implements Serializable{
@@ -10,14 +13,24 @@ public class ClientDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+
+	@NotBlank(message = "{name.not.blank}")
 	private String name;
+
+	@NotBlank(message = "{cpf.not.blank}")
 	private String cpf;
+
+	@NotNull(message = "{income.not.blank}")
 	private Double income;
+
+	@NotNull(message = "{birthDate.not.blank}")
 	private Instant birthDate;
+
+	@NotNull(message = "{children.not.blank}")
 	private Integer children;
-	
+
 	public ClientDTO() {
-		
+
 	}
 
     public ClientDTO(Client entity) {
@@ -31,7 +44,7 @@ public class ClientDTO implements Serializable{
 
 	}
 
-	public ClientDTO(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {		
+	public ClientDTO(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
